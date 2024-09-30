@@ -17,7 +17,7 @@ state: estado do qubit a ser transformado.
 Retorno:
 O novo estado do qubit após a aplicação da porta.
 
-HadamardGate
+# HadamardGate
 Classe que representa a porta Hadamard.
 
 Métodos Estáticos
@@ -26,7 +26,7 @@ Retorna a matriz da porta Hadamard.
 Retorno:
 [[1 / √2, 1 / √2], [1 / √2, -1 / √2]]
 
-PauliXGate
+# PauliXGate
 Classe que representa a porta Pauli-X (NOT quântico).
 
 Métodos Estáticos
@@ -35,7 +35,7 @@ Retorna a matriz da porta Pauli-X.
 Retorno:
 [[0, 1], [1, 0]]
 
-PauliYGate
+# PauliYGate
 Classe que representa a porta Pauli-Y.
 
 Métodos Estáticos
@@ -44,7 +44,7 @@ Retorna a matriz da porta Pauli-Y.
 Retorno:
 [[0, -1j], [1j, 0]]
 
-PauliZGate
+# PauliZGate
 Classe que representa a porta Pauli-Z.
 
 Métodos Estáticos
@@ -53,7 +53,7 @@ Retorna a matriz da porta Pauli-Z.
 Retorno:
 [[1, 0], [0, -1]]
 
-CNOTGate
+# CNOTGate
 Classe que representa a porta CNOT (Controlled-NOT).
 
 Métodos Estáticos
@@ -65,7 +65,7 @@ target: estado do qubit alvo (0 ou 1).
 Retorno:
 O novo estado dos qubits de controle e alvo.
 
-TGate
+# TGate
 Classe que representa a porta T (Phase rotation).
 
 Métodos Estáticos
@@ -74,7 +74,7 @@ Retorna a matriz da porta T.
 Retorno:
 [[1, 0], [0, e^(iπ/4)]]
 
-SGate
+# SGate
 Classe que representa a porta S.
 
 Métodos Estáticos
@@ -83,7 +83,7 @@ Retorna a matriz da porta S.
 Retorno:
 [[1, 0], [0, 1j]]
 
-RotationXGate
+# RotationXGate
 Classe que representa a porta de rotação em torno do eixo X.
 Métodos Estáticos
 get_matrix(theta)
@@ -91,7 +91,7 @@ Retorna a matriz da porta Rx para o ângulo θ.
 Parâmetros:
 theta: ângulo de rotação em radianos.
 
-RotationYGate
+# RotationYGate
 Classe que representa a porta de rotação em torno do eixo Y.
 
 Métodos Estáticos
@@ -100,7 +100,7 @@ Retorna a matriz da porta Ry para o ângulo θ.
 Parâmetros:
 theta: ângulo de rotação em radianos.
 
-RotationZGate
+# RotationZGate
 Classe que representa a porta de rotação em torno do eixo Z.
 Métodos Estáticos
 get_matrix(theta)
@@ -108,7 +108,7 @@ Retorna a matriz da porta Rz para o ângulo θ.
 Parâmetros:
 theta: ângulo de rotação em radianos.
 
-SWAPGate
+# SWAPGate
 Classe que representa a porta SWAP.
 
 Métodos Estáticos
@@ -120,7 +120,7 @@ qubit2: estado do segundo qubit.
 Retorno:
 Os novos estados dos qubits trocados.
 
-Como Usar
+# Como Usar
 Para usar estas portas quânticas, você pode importar as classes necessárias e aplicar as portas ao estado de um 
 
 qubit como no exemplo abaixo:
