@@ -1,8 +1,8 @@
-# my_quantum_lib/gates.py
+# Quantum_lib/gates.py
 
 import math
 
-class QuantumGate:
+class QuantumGate:  
     """Classe base para portas quânticas"""
 
     @staticmethod
@@ -59,6 +59,24 @@ class CNOTGate:
         if control == 1:
             target = 1 - target  # Inverte o qubit alvo
         return control, target
+    
+class ToffoliGate:
+    """Classe que representa a porta Toffoli (CCNOT - Controlled-Controlled-NOT)"""
+    
+    @staticmethod
+    def apply(control1, control2, target):
+        """
+        Aplica a porta Toffoli, invertendo o qubit target se os qubits de controle 1 e 2 estiverem no estado |1⟩.
+        
+        :param control1: estado do primeiro qubit de controle (0 ou 1)
+        :param control2: estado do segundo qubit de controle (0 ou 1)
+        :param target: estado do qubit alvo (0 ou 1)
+        :return: os novos estados de control1, control2 e target
+        """
+        if control1 == 1 and control2 == 1:
+            target = 1 - target  # Inverte o qubit alvo
+        return control1, control2, target
+
 
 class TGate(QuantumGate):
     """Classe que representa a porta T (Phase rotation)"""
