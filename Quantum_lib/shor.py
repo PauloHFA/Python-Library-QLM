@@ -1,6 +1,8 @@
 import numpy as np
 from .gates import HadamardGate, CNOTGate, RotationZGate
+from .qubit import Qubit 
 import math
+import random
 
 class ShorAlgorithm:
     """Classe que implementa o Algoritmo de Shor para fatoração de números inteiros."""
@@ -33,11 +35,18 @@ class ShorAlgorithm:
     def quantum_period_finding(self):
         """
         Implementa a busca de período quântico.
-        Para simplificação, retorna um valor fixo (substitua por implementação real).
         """
-        # Aqui você deve implementar a lógica quântica para encontrar o período
-        # utilizando portas quânticas, a transformação de Fourier quântica, etc.
-        return 2  # Exemplo de retorno fixo, substitua pela implementação real.
+        # Crie um número de qubits necessários
+        num_qubits = 2  # Exemplo, ajuste conforme necessário
+        qubits = [Qubit() for _ in range(num_qubits)]
+
+        # Aplica portas quânticas conforme necessário:
+        H_matrix = HadamardGate.get_matrix()
+        qubits[0].state = HadamardGate.apply(H_matrix, qubits[0].state)
+
+    
+        # utilizando portas quânticas, a transformação de Fourier quântica.
+        return 2  # Exemplo de retorno fixo.
 
     def find_factors(self):
         """Fatoriza o número N utilizando o Algoritmo de Shor."""

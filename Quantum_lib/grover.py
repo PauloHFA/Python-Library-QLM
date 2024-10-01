@@ -1,6 +1,6 @@
 import math
 import numpy as np
-from .gates import HadamardGate, PauliXGate, CNOTGate
+from .gates import HadamardGate
 
 class GroverAlgorithm:
     """Classe que implementa o algoritmo de Grover para busca em um espaço de estados."""
@@ -17,12 +17,14 @@ class GroverAlgorithm:
     
     def initialize(self):
         """Inicializa os qubits em estado |s⟩ (superposição igual)."""
-        self.state = [1 / math.sqrt(2**self.n)] * (2**self.n)
+        # Inicializa os estados em |0⟩
+        self.state = [0] * (2**self.n)
+        self.state[0] = 1  # Inicia no estado |0...0⟩
 
-        # Aplica a porta Hadamard em todos os qubits
-        for i in range(self.n):
-            self.state = HadamardGate.apply(HadamardGate.get_matrix(), self.state)
-    
+        # Aplica Hadamard a todos os qubits
+        for i in range(2**self.n):
+            self.state[i] = HadamardGate.apply(HadamardGate.get_matrix(), self.state)
+
     def set_target(self, target):
         """
         Define o estado alvo para a busca.
